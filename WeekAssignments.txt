@@ -1,0 +1,718 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//1.predefined delegates
+namespace genericdelegates
+{
+    
+    public delegate double multnumsDelegate1(int x, int y, int z);
+    
+    class Program
+  {
+	//method for func delegate
+    static int Sum(int x, int y)
+    {
+        return x + y;
+    }
+	//method for action delegate
+	static void ConsolePrint(int i)
+		{
+  		  Console.WriteLine(i);
+		}
+
+	//method for predicate delegate
+	 sstatic bool IsUpperCase(string str)
+		{
+ 		   return str.Equals(str.ToUpper());
+		}
+
+
+    static void Main(string[] args)
+    {
+       //instatiation of func delegate
+        Func<int,int, int> add = Sum;
+
+        int result = add(10, 10);
+
+        Console.WriteLine(result); 
+	
+	//instantiation of action delegate
+	Action<int> printActionDel = ConsolePrint;
+		  ////Action<int> printActionDel = new Action<int>(ConsolePrint);
+  		  printActionDel(10);
+
+	//instantiation of predicate delegate
+	 Predicate<string> isUpper = IsUpperCase;
+
+   			 bool result = isUpper("hello world!!");
+
+  			 Console.WriteLine(result);
+  			 Console.ReadLine();
+        Console.ReadLine();
+    }
+  }
+}
+
+
+//2.dictionary
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dictionary
+{
+    class program
+  { 
+
+     static public void Main ()
+    { 
+
+        // Creating a dictionary  u
+        Dictionary<int, string> dict1 = new Dictionary<int, string>();   
+
+          dict1.Add(1, "Welcome"); 
+
+          dict1.Add(2, "to"); 
+
+          dict1.Add(3, "Technical training");
+
+          foreach(KeyValuePair<int, string> element in dict1) 
+
+          { 
+
+              Console.WriteLine("{0} and {1}",  element.Key, element.Value); 
+
+          } 
+
+          Console.WriteLine(); 
+
+            
+
+          // One more  dictionary 
+
+         
+      Dictionary<string, string> dict2 = new Dictionary<string, string>()
+				{ 
+
+                                  	{"player1","Dhoni"}, 
+
+                                 	{"player2","sachin"}, 
+
+                                	{"player3","Bravo"} 
+				};  
+
+           
+
+          foreach(KeyValuePair<string, string> element1 in dict2) 
+
+          { 
+
+              Console.WriteLine("{0} and {1}", element1.Key, element1.Value); 
+              Console.ReadLine();
+
+          } 
+
+      } 
+  }
+
+}
+
+
+
+
+
+//3.Multithreading
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+
+namespace MultiThreading
+{
+    class Program
+    {
+       
+        static void Sum()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("Sum is :" + i);
+            }
+        }
+        
+        static void Mul()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("Mul is :" + i);
+            }
+        }
+        static void Div()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("Division :" + i);
+            }
+        }
+
+	static void Main(string[] args)
+        {
+            Sum();
+            Mul();
+            Div();
+            Console.ReadLine();
+        }
+
+	
+		 
+    }
+
+}
+
+
+
+
+
+//4.Singlethreading
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace singlethreading
+{
+
+    class Mthreads
+
+    {
+	//method1
+        public static void Sum()
+        {
+            
+            for(int i = 0;i <= 20;i++)
+            {
+                 Console.WriteLine("Sum starts at " +i);
+            }
+            
+            Console.WriteLine("******Sum  ends at*****");
+        }
+
+          //method2 
+        public static void Multiple()
+        {
+            
+            for(int i = 0;i <= 5=;i++)
+            {
+                 Console.WriteLine("Multiple starts at " +i);
+		 if(i == 25)
+                 {
+			Console.WriteLine("main thread is going to sleep......");
+                        Thread.Sleep(1000000);
+			Console.WriteLine("main thread wokeup!");
+                 }
+            }
+            
+            Console.WriteLine("***********Multiple  ends at*****");
+        }
+
+        //method3	
+        public static void Division()
+        {
+    
+            for(int i = 0;i <= 50;i++)
+            {
+                 Console.WriteLine("Division starts at " +i);
+            }
+            
+            Console.WriteLine("*****Division ends at*****");
+        }
+
+    }
+	Console.ReadKey(); 
+
+
+      	  
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Main Thread Started");
+            Mthreads ob = new Mthreads();
+            double result = 0;
+
+            Thread T1 = new Thread(() => {res1= ob.Sum(); });
+            Thread T2 = new Thread(() => { res2=ob.Multiple(); });
+	    Thread T3 = new Thread(() => { res3=obj.method3(); });
+            
+
+            T1.Start();T2.Start(); T3.Start();
+            T1.Join();T2.Join(); T3.Join();
+
+            Console.WriteLine(res1);
+            Console.WriteLine("Sum execution completed");
+            Console.WriteLine("*********************************************************");
+                                
+            Console.WriteLine(res2);
+            Console.WriteLine("Multiple execution completed");
+            Console.WriteLine("*********************************************************");
+	                         
+            Console.WriteLine(res3);
+            Console.WriteLine("Division execution completed");
+            Console.WriteLine("*********************************************************");
+
+            Console.WriteLine();
+            Console.WriteLine("Main Thread completed");
+            Console.ReadLine();
+
+
+        }
+    
+ 
+}
+
+
+//5.Regular Expressions
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+using System.Text.RegularExpressions;  
+  
+namespace RegularExpressions  
+{  
+    class Regexs  
+    {  
+        static void Main(string[] args)  
+        {  
+            Regex r = new Regex(@"^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}");  
+            //class Regex Repesents an immutable regular expression.  
+  
+            string[] str = { "+91-9678967101", "9678967101", "+91-9678-967101", "+91-96789-67101", "+919678967101" };  
+            //Input strings for Match valid mobile number.  
+            foreach (string s in str)  
+            {  
+                Console.WriteLine("{0} {1} a valid mobile number.", s,  
+                r.IsMatch(s) ? "is" : "is not"); 
+                Console.ReadLine(); 
+               
+            }  
+        }  
+    }  
+}
+
+
+
+
+//6.Using  Regex.Match
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace RegexMatch
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //  the input string.
+            string input = "/content/match-1.aspx";
+
+            //  call Regex.Match.
+            Match match = Regex.Match(input, @"content/([A-Za-z0-9\-]+)\.aspx$", RegexOptions.IgnoreCase);
+
+            //  checking the Match for Success.
+            if (match.Success)
+            {
+                // get the Group value and display it.
+                string key = match.Groups[1].Value;
+                Console.WriteLine(key);
+                Console.ReadLine();
+            }
+        }
+    }
+}
+
+
+// program that uses IsMatch, start and end
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Ismatchstartend
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string test = "aabb";
+
+            // Match the start of a string.
+            if (Regex.IsMatch(test, "^aa"))
+            {
+                Console.WriteLine("START MATCHES");
+            }
+
+            // Match the end of a string.
+            if (Regex.IsMatch(test, "bb$"))
+            {
+                Console.WriteLine("END MATCHES");
+                Console.ReadLine();
+            }
+
+        }
+    }
+}
+
+
+// Using NextMatch
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace Nextmatch
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string value = "1 AND 5";
+
+            // getting first match.
+            Match match = Regex.Match(value, @"\d");
+            if (match.Success)
+            {
+                Console.WriteLine(match.Value);
+            }
+
+            //  getting second match.
+            match = match.NextMatch();
+            if (match.Success)
+            {
+                Console.WriteLine(match.Value);
+                Console.ReadLine();
+            }
+
+        }
+    }
+}
+
+
+// Using Replace, replaces with pattern
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+namespace replace
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // Replace 2 or more digit pattern with a string.
+            Regex regex = new Regex(@"\d+");
+            string result = regex.Replace("animal 123 456", "Bird");
+            Console.WriteLine("RESULT: {0}", result);
+            Console.ReadLine();
+
+        }
+    }
+}
+
+//Using matches and parses a number
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "Dot Net 100 Perls";
+        Match match = Regex.Match(input, @"\d+");
+        if (match.Success)
+        {
+            int.TryParse(match.Value, out int number);
+            // Show that we have the numbers.
+            Console.WriteLine("NUMBERS: {0}, {1}", number, number + 1);
+        }
+    }
+}
+
+
+// Using RegexOptions.IgnoreCase
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        const string value = "PUBLIC";
+        //  ignores the case of the "PU" chars
+        if (Regex.IsMatch(value, "pu..", RegexOptions.IgnoreCase))
+        {
+            Console.WriteLine(true);
+            Console.ReadLine();
+        }
+    }
+}
+
+
+//Using  value, length, index
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        Match m = Regex.Match("111 aaaccbbb", @"a.*b");
+        if (m.Success)
+        {
+            Console.WriteLine("Value  = " + m.Value);
+            Console.WriteLine("Length = " + m.Length);
+            Console.WriteLine("Index  = " + m.Index);
+	    Console.ReadLine();
+        }
+    }
+}
+
+
+
+//7.Queue Operations
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Queue
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            Queue<string> str = new Queue<string>();
+
+            str.Enqueue(A);
+            
+            str.Enqueue(E);
+            
+            str.Enqueue(I);
+            
+            str.Enqueue(O);
+           
+            str.Enqueue(U);
+
+            Console.WriteLine("The elements in queue are:{0}",str.Count);
+            while (str.Count > 0)
+            {
+                Console.WriteLine(str.Dequeue());
+            }
+
+	    Console.WriteLine("elements of queue are:{0}" + str.Count);
+            Console.ReadLine();
+        }
+    }
+}
+
+
+//8.Window forms
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace winform
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button b = new Button();
+            b.Text = "Over Here";
+            b.Size = new Size(100, 50);
+            b.Location = new Point(200, 200);
+            this.Controls.Add(b);
+           
+            //  using delegate(anonymous method)
+		//method 1	
+
+            b.Click += delegate (object sender1, EventArgs e1)
+            {
+                System.Windows.Forms.MessageBox.Show("Computer science ");
+            };
+		
+		//method 2
+            b.Click += delegate (object sender2, EventArgs e2)
+            {
+                System.Windows.Forms.MessageBox.Show("Electronics and Communication");
+            };
+
+		//method 3
+
+            b.Click += delegate (object sender3, EventArgs e3)
+            {
+                System.Windows.Forms.MessageBox.Show("Information Technology");
+            };
+
+		 
+
+        }
+        
+
+    }
+}
+
+
+//9.List operations
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace listoperations
+{
+
+    public class product
+    {
+          
+        public string Name { get; set; }
+        public string Brand { get; set; }
+        public double Price { get; set; }
+        public string productDetails()
+        {
+            return string.Format("{0} is Brand of {1}. Price: ${2}",
+                Name, Brand, Price);
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" List!");
+            ListItems();
+        }
+
+        public static void ListItems()
+        {
+	
+            // 1.Create a List of int  
+            List<int> numbers = new List<int>(10) { 2,4,6,8,10,12,14,16,18,20 };
+     	    
+
+            // 2.Add more items to List  
+            numbers.Add(22);
+            numbers.Add(24);
+            numbers.Add(26);           
+
+            
+            // 3.Insert a collection     
+            numbers.InsertRange(5, new int[] { 5, 15, 25, 35, 45 });
+
+            //4. Read List items  
+            foreach (int num in numbers)
+            {
+                Console.Write($"{num}, ");
+            }
+
+            Console.WriteLine();
+ 
+
+            //5. remove items from list
+               
+                {
+                   string s = "Sushmitha";
+                    //
+                    Console.WriteLine("Index: 012345678");
+                    Console.WriteLine("1)     {0}", s);
+                    Console.WriteLine("2)     {0}", s.Remove(1));
+                    Console.WriteLine("3)     {0}", s.Remove(2, 2));
+                }
+       
+		//6. containing in the list
+
+            {
+              
+                String str = "DaybyDay";
+                String substr1 = "by";
+                String substr2 = "By";
+
+                // using String.Contains() Method 
+                Console.WriteLine(str.Contains(substr1));
+
+                //  case-sensitive comparison is done
+                // substr2 value is 'By' 
+               
+                Console.WriteLine(str.Contains(substr2));
+            }
+
+            Console.WriteLine();
+       
+            Console.ReadLine();
+        }
+    }
+
+}
