@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    
+   
+</head>
+<body>
+    <h2>What Can JavaScript Do?</h2>
+    <h2>JavaScript Variables</h2>
+
+    <p id="demo"></p>
+    <script>
+        var price1 = 5;
+        var price2 = 6;
+        var total = price1 + price2;
+        document.getElementById("demo").innerHTML =
+            "The total is: " + total;
+
+    </script>
+
+    <p id="demo1"></p>
+
+    <script>
+        var pi = 3.14;
+        var person = "John Doe";
+        var answer = 'Yes I am!';
+
+        document.getElementById("demo1").innerHTML =
+            pi + "<br>" + person + "<br>" + answer;
+    </script>
+
+    <p id="demo2"></p>
+
+    <script>
+        var carName = "Volvo";
+        document.getElementById("demo2").innerHTML = carName;
+    </script>
+
+    <p>The result of adding 5 + 2 + 3:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        var x = 5 + 2 + 3;
+        document.getElementById("demo3").innerHTML = x;
+    </script>
+
+    <p>The result of adding "John" + " " + "Doe":</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        var x = "John" + " " + "Doe";
+        document.getElementById("demo4").innerHTML = x;
+    </script>
+
+    <p id="demo5"></p>
+
+    <script>
+        var x = 10;
+        x += 5;
+        document.getElementById("demo5").innerHTML = x;
+    </script>
+
+    <p>Adding a number and a string, returns a string.</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        var x = 5 + 5;
+        var y = "5" + 5;
+        var z = "Hello" + 5;
+        document.getElementById("demo6").innerHTML =
+            x + "<br>" + y + "<br>" + z;
+    </script>
+
+
+
+</body>
+
+</html>
