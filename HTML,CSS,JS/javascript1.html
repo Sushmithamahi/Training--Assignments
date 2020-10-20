@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Calculation</h2>
+
+    <!--without using function-->
+    <!--<button onclick="document.getElementById('button1').innerHTML=z">SUM</button>
+    <button onclick="document.getElementById('button2').innerHTML=p">DIFFERENCE</button>
+    <button onclick="document.getElementById('button3').innerHTML=q">PRODUCT</button>
+    <button onclick="document.getElementById('button4').innerHTML=r">FRACTION</button>-->
+
+    <!--with using function-->
+    <button onclick="add()">SUM</button>
+    <button onclick="sub()">DIFFERENCE</button>
+    <button onclick="mul()">PRODUCT</button>
+    <button onclick="div()">FRACTION</button>
+
+
+    <p id="button1"></p>
+    <p id="button2"></p>
+    <p id="button3"></p>
+    <p id="button4"></p>
+
+    <script>
+        var x = 20;
+        var y = 30;
+        var z = x + y;
+        var p = x - y;
+        var q = x * y;
+        var r = x / y;
+        function add() {
+            document.getElementById("button1").innerHTML = z;
+        }
+        function sub() {
+            document.getElementById("button2").innerHTML = p;
+        }
+        function mul() {
+            document.getElementById("button3").innerHTML = q;
+        }
+        function div() {
+            document.getElementById("button4").innerHTML = r;
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>
