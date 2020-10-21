@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("p").click(function () {
+                $(this).hide()
+            });
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+            $("p1").dblclick(function () {
+                $(this).hide()
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#sush").mouseenter(function () {
+                alert("you selected name as sush");
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("p3").mouseenter(function () {
+                alert("you are stupid");
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#mahi").mouseleave(function () {
+                alert("lets have dinner");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "cyan")
+            });
+        });
+        $("input").blur(function () {
+            $(this).css("background-color","red");
+        });
+    </script>
+</head>
+<body>ss
+    <p>if u click me</p>
+    <p>click me too</p>
+    <p>clcikc me alsooo</p>
+
+    <p1>if u dbl click me</p1><br /><br />
+    <p1>click  dbl me too</p1><br /><br />
+    <p1>clcikc dbl me alsooo</p1><br /><br />
+
+    <p2 id="sush">my name is</p2><br /><br />
+
+    <p3>take mouse here</p3><br /><br />
+    
+    <p4 id="mahi">when you leave mouse</p4><br /><br />
+   Name:<input type="text" name="fullname" >
+   
+
+</body>
+</html>
