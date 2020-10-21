@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideUp()
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#flip1").click(function () {
+                $("#panel1").slideDown()
+                $("#panel2").slideDown()
+
+
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#flip2").click(function () {
+                $("#panel3").slideToggle()
+
+                
+
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").animateToggle({ left: '400px'})
+            });
+        });
+    </script>
+    <style>
+        #flip {
+            background-color: burlywood;
+            text-align: end;
+            padding: 10px;
+        }
+
+        #panel {
+            text-align: end;
+            background-color: aqua;
+            padding: 10px;
+        }
+    </style>
+    <style>
+        #flip1 {
+            background-color: burlywood;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #panel1 {
+            text-align: center;
+            background-color: aqua;
+            padding: 10px;
+            display: none
+        }
+
+        #panel2 {
+            text-align: center;
+            background-color: aqua;
+            padding: 10px;
+            display: none
+        }
+    </style>
+    <style>
+        #flip2 {
+            background-color: cadetblue;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #panel3 {
+            text-align: center;
+            background-color: coral;
+            padding: 10px;
+            display: none
+        }
+    </style>
+    
+</head>
+        <body >
+        <div id="flip" > click to slide up panel</div >
+        <div id="panel" > programming is fun</div >
+
+        <div id="flip1" > one more slide</div >
+        <div id="panel1" > laptop</div >
+        <div id="panel2" > tv</div >
+
+        <div id="flip2" > click to slide down and up</div >
+        <div id="panel3" > jumping</div ><br />
+
+        <button>start animate</button><br /><br />
+         <div style="background-color:blue;width:150px;height:180px;position:absolute"></div>
+        </body >
+        </html >

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--adding item as append-->
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").append(" <b>chennai</b>.");
+            });
+
+            $("#btn2").click(function () {
+                $("ol").append("<li>Macbook</li>");
+            });
+        });
+    </script>
+
+    <!--adding item as prepend-->
+    <script>
+        $(document).ready(function () {
+            $("#btn3").click(function () {
+                $("p1").prepend(" <b>chennai</b>.");
+            });
+
+            $("#btn4").click(function () {
+                $("ul").prepend("<li>Macbook</li>");
+            });
+        });
+    </script>
+
+    <!--adding after and before elements-->
+    <script>
+        $(document).ready(function () {
+            $("#btn5").click(function () {
+                $("P2").before("<b>HYDERABAD</b>");
+            });
+
+            $("#btn6").click(function () {
+                $("P2").after("<i>BEAUTIFUL</i>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Bangalore changes to </p>
+    <p>Delhi also changes to</p>
+
+    <ol>
+        <li>tv</li>
+        <li>phone</li>
+        <li>laptop</li>
+    </ol>
+
+    <button id="btn1">Append text</button>
+    <button id="btn2">Append list items</button><br /><br />
+
+    <p1> To Bangalore </p1><br /><br />
+    <p1>To Delhi </p1>
+
+    <ul>
+        <li>tv</li>
+        <li>phone</li>
+        <li>laptop</li>
+    </ul>
+
+    <button id="btn3">prepend text</button>
+    <button id="btn4">prepend list items</button><br /><br />
+
+    <p2> IS </p2><br /><br />
+
+    <button id="btn5">Insert before</button>
+    <button id="btn6">Insert after</button>
+
+
+</body>
+</html>
