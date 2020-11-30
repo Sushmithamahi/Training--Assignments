@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PecnumiaBank27", "PecnumiaBank27\PecnumiaBank27.csproj", "{C39231CB-84D6-4348-AC6C-18431505E05A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C39231CB-84D6-4348-AC6C-18431505E05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39231CB-84D6-4348-AC6C-18431505E05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39231CB-84D6-4348-AC6C-18431505E05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39231CB-84D6-4348-AC6C-18431505E05A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E770DC4C-4AF7-4C66-AF09-9BDBF7F0138A}
+	EndGlobalSection
+EndGlobal
